@@ -4,12 +4,13 @@ import { ProductsService } from '../../core/services/products/products.service';
 import { Iproduct } from '../../shared/interfaces/iproduct';
 import { Icategories } from '../../shared/interfaces/icategories';
 import { Router, RouterLink } from '@angular/router';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink,CarouselModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 
@@ -21,14 +22,33 @@ export class HomeComponent implements OnInit {
   private readonly router = inject(Router);
   products:Iproduct[] = [];
   categories:Icategories[] = [];
-  iconCategory:string[] = [
-    'fa-solid fa-headphones',
-    'fa-solid fa-person',
-    'fa-solid fa-person-dress',
-    'fa-solid fa-shop',
-    'fa-solid fa-baby-carriage',
-    'fa-solid fa-house'
-  ]
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    navText: ['<span class=" text-[#316565]"><i class="fa-solid fa-angles-right"></i></span>', '<span class=" text-[#316565]"><i class="fa-solid fa-angles-right"></i></span>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
 
 
 
