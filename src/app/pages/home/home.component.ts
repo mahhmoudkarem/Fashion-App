@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     autoplayTimeout:1000,
     autoplayHoverPause:true,
-    navText: ['<span class=" text-[#316565]"><i class="fa-solid fa-angles-right"></i></span>', '<span class=" text-[#316565]"><i class="fa-solid fa-angles-right"></i></span>'],
+    navText: ['<span class=" text-[#316565]"><i class="fa-solid fa-angles-left"></i></span>', '<span class=" text-[#316565]"><i class="fa-solid fa-angles-right"></i></span>'],
     responsive: {
       0: {
         items: 1
